@@ -1,11 +1,11 @@
 server:
   address:     ":8000"
-  openapiPath: "/api.json"
-  swaggerPath: "/swagger"
-
 logger:
   level : "all"
   stdout: true
 
-
-
+oss:
+  allow-anonymous: true
+  base-url: "https://oss.dev.lidong.xin"
+  key-secrets:
+    ljksdfjlksdjflksdjflksdjf: "L0asfsfsdafaScStIFqHSIP2DFV7d"
