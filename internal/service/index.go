@@ -43,7 +43,6 @@ func (s *sIndex) Upload(ctx g.Ctx, req *v1.IndexReq) (res *v1.IndexRes, err erro
 	g.Dump(policyMap)
 	// 检验policy是否过期
 	expiration := policyMap["expiration"]
-	// UTC时间转换为本地时间
 	expirationTime, err := gtime.StrToTime(expiration)
 	if err != nil {
 		return nil, gerror.NewCode(gcode.CodeMissingParameter, "Policy过期时间解析失败")
