@@ -1,0 +1,10 @@
+version: '3'
+services:
+  go-oss:
+    image: gcslaoli/go-oss:latest
+    restart: always
+    ports:
+      - 8000:8000
+    volumes:
+      - /data/go-oss:/app/upload
+      - config.yaml:/app/config.yaml
