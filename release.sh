@@ -41,7 +41,6 @@ git push origin "v$version"
 docker login
 
 # 编译并发布镜像
-cd go-oss
 docker buildx build --platform linux/amd64,linux/arm64 \
     -t gcslaoli/go-oss:latest \
     -t gcslaoli/go-oss:$major \
