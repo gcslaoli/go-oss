@@ -1,11 +1,8 @@
 package main
 
 import (
-	_ "github.com/gcslaoli/go-oss/internal/packed"
-
-	"github.com/gogf/gf/v2/os/gctx"
-
 	"github.com/gcslaoli/go-oss/internal/cmd"
+	"github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
