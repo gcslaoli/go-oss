@@ -1,13 +1,13 @@
 package controller
 
 import (
-	"github.com/hjmcloud/go-oss/internal/config"
-	"github.com/hjmcloud/go-oss/internal/service"
+	"github.com/gcslaoli/go-oss/internal/config"
+	"github.com/gcslaoli/go-oss/internal/service"
 
+	v1 "github.com/gcslaoli/go-oss/api/v1"
 	"github.com/gogf/gf/v2/errors/gcode"
 	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/gogf/gf/v2/frame/g"
-	v1 "github.com/hjmcloud/go-oss/api/v1"
 )
 
 var (

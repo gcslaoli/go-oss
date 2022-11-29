@@ -8,7 +8,7 @@ import (
 	"github.com/gogf/gf/v2/os/gcmd"
 	"github.com/gogf/gf/v2/os/gfile"
 
-	"github.com/hjmcloud/go-oss/internal/controller"
+	"github.com/gcslaoli/go-oss/internal/controller"
 )
 
 var (

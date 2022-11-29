@@ -4,9 +4,9 @@ import (
 	"crypto/hmac"
 	"crypto/sha1"
 
-	"github.com/hjmcloud/go-oss/internal/config"
+	"github.com/gcslaoli/go-oss/internal/config"
 
-	v1 "github.com/hjmcloud/go-oss/api/v1"
+	v1 "github.com/gcslaoli/go-oss/api/v1"
 
 	"github.com/gogf/gf/v2/encoding/gbase64"
 	"github.com/gogf/gf/v2/encoding/gjson"
