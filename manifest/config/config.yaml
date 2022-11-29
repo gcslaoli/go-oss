@@ -5,7 +5,7 @@ logger:
   stdout: true
 
 oss:
-  allow-anonymous: true
-  base-url: "https://oss.dev.lidong.xin"
-  key-secrets:
+  allowAnonymous: true
+  baseUrl: "https://oss.dev.lidong.xin"
+  keySecrets:
     ljksdfjlksdjflksdjflksdjf: "L0asfsfsdafaScStIFqHSIP2DFV7d"

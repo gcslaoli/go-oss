@@ -6,8 +6,8 @@ import (
 )
 
 type cConfig struct {
-	KeySecrets     g.MapStrStr `json:"key-secrets"`
-	AllowAnonymous bool        `json:"allow-anonymous"`
+	KeySecrets     g.MapStrStr `json:"keySecrets"`
+	AllowAnonymous bool        `json:"allowAnonymous"`
 	BaseUrl        string      `json:"base-url"`
 }
 
@@ -17,9 +17,9 @@ var (
 
 func init() {
 	ctx := gctx.GetInitCtx()
-	Config.KeySecrets = g.Cfg().MustGetWithEnv(ctx, "oss.key-secrets").MapStrStr()
-	Config.AllowAnonymous = g.Cfg().MustGetWithEnv(ctx, "oss.allow-anonymous").Bool()
-	Config.BaseUrl = g.Cfg().MustGetWithEnv(ctx, "oss.base-url").String()
+	Config.KeySecrets = g.Cfg().MustGetWithEnv(ctx, "oss.keySecrets").MapStrStr()
+	Config.AllowAnonymous = g.Cfg().MustGetWithEnv(ctx, "oss.allowAnonymous").Bool()
+	Config.BaseUrl = g.Cfg().MustGetWithEnv(ctx, "oss.baseUrl").String()
 
 	// g.Log().Info(ctx, "Config.KeySecrets", Config.KeySecrets)
 	// g.Log().Info(ctx, "Config.AllowAnonymous", Config.AllowAnonymous)
