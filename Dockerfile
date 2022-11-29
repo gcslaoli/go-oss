@@ -1,24 +1,16 @@
-FROM alpine
-# Install dependencies
+FROM golang AS builder
 ARG TARGETARCH
-RUN echo "I'm building for $TARGETARCH"
+RUN echo "Building for $TARGETARCH"
+WORKDIR /build
+RUN go env -w GO111MODULE=on
+RUN go env -w GOPROXY=https://goproxy.cn,direct
+COPY . .
+RUN go build -o go-oss
+
+FROM ubuntu
+WORKDIR /app
 ENV TZ                      Asia/Shanghai
-RUN set -eux && sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
-RUN apk update && apk add tzdata  bash
-
-###############################################################################
-#                                INSTALLATION
-###############################################################################
-EXPOSE 8000
-
-ENV WORKDIR                 /app
-VOLUME [ "${WORKDIR}/upload/" ]
-ADD resource                $WORKDIR/
-COPY ./temp/linux_amd64/main $WORKDIR/main
-RUN chmod +x $WORKDIR/main
-
-###############################################################################
-#                                   START
-###############################################################################
-WORKDIR $WORKDIR
-CMD ./main
+RUN apt-get update && apt-get install -y tzdata
+COPY --from=builder /build/go-oss /app/go-oss
+# RUN chmod +x /app/config-deliver-server
+CMD ./gooss
